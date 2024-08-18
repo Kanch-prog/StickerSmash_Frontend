@@ -8,8 +8,8 @@ export default function LoginScreen({ navigation, onLogin }) {
 
   const handleLoginPress = async () => {
     try {
-      await onLogin(username, password); // Call the prop function to handle login
-      navigation.navigate('UploadImage'); 
+      await onLogin(username, password);
+      navigation.navigate('UploadImageScreen'); // Ensure this matches the screen name in AppNavigator
     } catch (error) {
       console.error('Error logging in:', error);
       setError('Login failed. Please check your credentials.');
@@ -37,7 +37,7 @@ export default function LoginScreen({ navigation, onLogin }) {
       <Button title="Login" onPress={handleLoginPress} />
       <Button
         title="Register"
-        onPress={() => navigation.navigate('Register')}
+        onPress={() => navigation.navigate('RegisterScreen')}
         style={styles.registerButton}
       />
     </View>
